@@ -1,0 +1,23 @@
+RewriteEngine On
+RewriteBase /
+
+#2015.08.04
+ErrorDocument 404 /404.html
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(view|inc|top)/(.*)$ /index.php [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^web].*)\.(html|xml|txt)$ /index.php?rewrite=$1&file_type=$2 [L]
+RewriteRule ^(.*)/$ /index.php?rewrite=$1 [L]
+
+
+
+
+
+
+
+
+
+
+
+
+
